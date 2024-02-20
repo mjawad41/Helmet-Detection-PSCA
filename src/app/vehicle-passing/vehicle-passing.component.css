@@ -1,0 +1,24 @@
+/* Improved DataTables styling */
+table.dataTable {
+    width: 100%;
+    margin: 1em 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+}
+
+table.dataTable thead th,
+table.dataTable thead td {
+    border-bottom: 1px solid #dee2e6; /* Add bottom border to header cells */
+    padding: 12px; /* Add padding for header cells */
+}
+
+table.dataTable tbody td {
+    border-bottom: 1px solid #dee2e6; /* Add bottom border to body cells */
+    padding: 12px; /* Add padding for body cells */
+}
+
+table.dataTable tbody tr:last-child td {
+    border-bottom: none; /* Remove bottom border for the last row */
+}
+

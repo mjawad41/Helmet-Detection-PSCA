@@ -1,0 +1,53 @@
+
+
+     
+
+    <div class="wrapper d-flex flex-column min-vh-100 bg-white">
+    
+      <div class="body flex-grow-1 px-3">
+        <div class="container-lg">
+          
+                  <div class="row align-items-end justify-content-center">
+                <div class="col-3">
+                    <label for="startDate" class="form-label fw-bold">Start Time</label>
+                    <input type="datetime-local" class="form-control" id="startDate" name="startDate" [(ngModel)]="startDate">
+                </div>
+                <div class="col-3">
+                    <label for="end" class="form-label fw-bold">End Time</label>
+                    <input type="datetime-local" class="form-control" id="endDate" name="endDate" [(ngModel)]="endDate">
+                </div>
+
+                <div class="col-2">
+                    <input type="button" class="btn btn-info text-white me-2" value="Search" (click)="Search()">
+                    
+                </div>
+              </div>
+              <div>
+                <highcharts-chart class="d-block w-100" [Highcharts]="Highcharts" [options]="categoryWisePassingPie"></highcharts-chart>
+              </div>
+              <hr />
+              <div>
+                <highcharts-chart class="d-block w-100" [Highcharts]="Highcharts" [options]="siteAndCategoryWisePassing"></highcharts-chart>
+              </div>
+              <hr />
+              <div>
+                <highcharts-chart class="d-block w-100" [Highcharts]="Highcharts" [options]="siteWiseChallan"></highcharts-chart>
+              </div>
+              <hr />
+              <div>
+                <highcharts-chart class="d-block w-100" [Highcharts]="Highcharts" [options]="categoryWiseHourlyPassing"></highcharts-chart>
+              </div>
+              <hr />
+              <div>
+                <highcharts-chart class="d-block w-100" [Highcharts]="Highcharts" [options]="categoryWiseHourlyChallan"></highcharts-chart>
+              </div>
+    
+      
+  
+    </div>
+  </div>
+  <footer class="footer">
+    <div> © 2023 All rights reserved.</div>
+    <div class="ms-auto"><a href="#">Powered by PSCA</a></div>
+  </footer>
+</div>

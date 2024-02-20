@@ -1,0 +1,28 @@
+/* styles.css or styles.scss */
+/* Add custom styles for your date inputs and button */
+
+/* Date inputs */
+input[type="datetime-local"] {
+    /* Add your styles here */
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Button */
+  button {
+    /* Add your styles here */
+    padding: 10px;
+    background-color: #4caf50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the button */
+  button:hover {
+    background-color: #45a049; /* Darker green */
+  }
+  

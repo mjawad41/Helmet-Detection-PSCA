@@ -1,0 +1,21 @@
+
+  /* Add this style block to your HTML file or include it in your CSS file */
+  .nav-item {
+margin-right: 30px;;
+  }
+
+  .nav-link {
+    
+    color: #b1b7c1; /* Set the text color */
+    
+  }
+
+  .nav-item:hover {
+    background-color: #eed6d634; /* Adjust the background color as desired */
+  }
+.page-title {
+  font-size: 3rem;
+}
+header.header {
+  background-color: rgba(79, 93, 115, 1) !important;
+}

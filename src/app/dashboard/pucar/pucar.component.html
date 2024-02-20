@@ -1,0 +1,137 @@
+<!-- PUCAR -->
+<div class="top-bar-gap" id="PUCAR"></div>
+<div class="card mb-4">
+  <h2 class="card-header bg-white text-center">PUCAR</h2>
+  <div class="card-body">
+
+    <div *ngIf="isLoading;" style="margin-left: 47%;" >
+      <app-loader></app-loader>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-lg-3">
+        <div class="card mb-4 text-white bg-primary">
+          <div class="card-body d-flex justify-content-between align-items-start">
+            <div>
+              <div class="fs-4 fw-semibold">{{Total_Cases}}</div>
+              <div>Total Cases</div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <svg class="icon">
+                  <use xlink:href="assets/vendors/coreui/icons/svg/free.svg#cil-options"></use>
+                </svg>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a
+                  class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else
+                  here</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- /.col-->
+      <div class="col-sm-6 col-lg-3">
+        <div class="card mb-4 text-white bg-info">
+          <div class="card-body d-flex justify-content-between align-items-start">
+            <div>
+              <div class="fs-4 fw-semibold">{{CrimeAgainstProperty}}</div>
+              <div>Crime Against Property</div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <svg class="icon">
+                  <use xlink:href="assets/vendors/coreui/icons/svg/free.svg#cil-options"></use>
+                </svg>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a
+                  class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else
+                  here</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-->
+      <div class="col-sm-6 col-lg-3">
+        <div class="card mb-4 text-white bg-warning">
+          <div class="card-body d-flex justify-content-between align-items-start">
+            <div>
+              <div class="fs-4 fw-semibold">{{CrimeAgainstPerson}}</div>
+              <div>Crime Against Person</div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <svg class="icon">
+                  <use xlink:href="assets/vendors/coreui/icons/svg/free.svg#cil-options"></use>
+                </svg>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a
+                  class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else
+                  here</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-->
+      <div class="col-sm-6 col-lg-3">
+        <div class="card mb-4 text-white bg-danger">
+          <div class="card-body d-flex justify-content-between align-items-start">
+            <div>
+              <div class="fs-4 fw-semibold">{{Other}}</div>
+              <div>Miscellaneous</div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <svg class="icon">
+                  <use xlink:href="assets/vendors/coreui/icons/svg/free.svg#cil-options"></use>
+                </svg>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a
+                  class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else
+                  here</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-->
+    </div>
+    <!-- <div class="" id="pucar-overall-calls-chart">
+      <highcharts-chart class="d-block w-100" [Highcharts]="Highcharts" [options]="overallPucarChart"></highcharts-chart>
+    </div> -->
+    <!-- <div class="" id="pucar-case-nature-chart">
+      <highcharts-chart class="d-block w-100" [Highcharts]="Highcharts" [options]="pucarCaseNatureChart"></highcharts-chart>
+    </div>
+    <div class="" id="pucar-crime-against-person-chart">
+      <highcharts-chart class="d-block w-100" [Highcharts]="Highcharts" [options]="pucarCrimeAgainstPersonChart"></highcharts-chart>
+    </div> -->
+    <!-- <div class="" id="pucar-crime-against-property-chart">
+      <highcharts-chart class="d-block w-100" [Highcharts]="Highcharts" [options]="pucarCrimeAgainstPropertyChart"></highcharts-chart>
+    </div>
+    <div class="" id="pucar-traffic-offences">
+      <highcharts-chart class="d-block w-100" [Highcharts]="Highcharts" [options]="trafficOffencesChart"></highcharts-chart>
+    </div> -->
+    <div class="text-end me-4">
+      <button (click)="exportToExcel()" >Export Report</button>
+      </div>
+    <div class="" >
+      <highcharts-chart class="d-block w-100" [Highcharts]="Highcharts" [options]="PcoWiseCasesChart"></highcharts-chart>
+    </div>
+
+    <div class="" >
+      <highcharts-chart class="d-block w-100" [Highcharts]="Highcharts" [options]="PcoWiseTalkTimeChart"></highcharts-chart>
+    </div>
+    <!-- <div class="" id="pucar-sos">
+      <highcharts-chart class="d-block w-100" [Highcharts]="Highcharts" [options]="pucarSoSChart"></highcharts-chart>
+    </div> -->
+  </div>
+  <div class="card-footer">
+    <div class="row row-cols-1 row-cols-md-5 text-center">
+    </div>
+
+  </div>
+</div>
+<!-- End: PUCAR -->

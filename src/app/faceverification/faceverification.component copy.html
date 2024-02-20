@@ -1,0 +1,230 @@
+<div class="wrapper d-flex flex-column min-vh-100 bg-light">
+    
+
+    <div class="body flex-grow-1 px-3">
+      <div class="container-fluid">
+          <!-- <div class="top-bar-gap" id="Echallan-verify"></div> -->
+          <div class="">
+              <!-- <h2 class="card-header bg-white text-center">Echallan</h2> -->
+              <div class="card-body">
+                  <div class="col-12">
+                      <div *ngIf="isLoading" class="mt-3">
+                        <div class="loader mx-auto"></div>
+                      </div>
+                    </div>
+                  <div class="row">
+                      <div class="col-8">
+                          <div class="row">
+                              <div class="col-12 zoom-box">
+                                <!-- <lib-ngx-image-zoom
+                                    [thumbImage]=VehicleChallanData[currentIndex].photopath
+                                    [fullImage]=VehicleChallanData[currentIndex].photopath
+                                    [enableLens]="true"
+                                    [lensWidth]="300"
+                                    [lensHeight]="300"
+                                    [magnification]="2"
+                                    [circularLens]="true"
+                                ></lib-ngx-image-zoom> -->
+                                <input type="file" id="imageInput" (change)="displaySelectedImage($event)" accept="image/*">
+                                <label for="imageInput" style="cursor: pointer;">
+                                  <img src="../../assets/img/violationimggg.jpg" alt="" id="selected-image" class="img-fluid violation-img">
+                                </label>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- Form -->
+                      <div class="col-4">
+                          <!-- <div class="row">
+                              <div class="col-12 text-end">
+                                  <button class="btn btn-sm btn-primary me-2">Statistics</button>
+                                  <button class="btn btn-sm btn-primary">Extract</button>
+                              </div>
+                              <div class="col-12">
+                                  <h6 class="text-primary">Vehicle Information</h6>
+                              </div>
+                          </div> -->
+                          <div class="row">
+                              <div class="col-12 bg-light">
+                                  <span class="text-primary py-2 fw-bold">Rider Information</span>
+                              </div>
+                          </div>
+                          <div class="row align-items-center text-end">
+                              <label class="col-sm-5 col-form-label" for="">
+                                  <span class="text-danger">*</span>
+                                  Driver Image:
+                              </label>
+                              <div class="col-sm-5">
+                                  <input class="form-control form-control-sm" id="" type="file" (change)="onFileSelected($event)">
+                              </div>
+                              <div class="col-sm-2">
+                                  <button class="btn btn-info btn-sm text-white" (click)="Query()">Query</button>
+                              </div>
+                          </div>
+
+                           
+                            <div class="row">
+                               
+                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <div class="row align-items-center text-end">
+                                        <label class="col-sm-5 col-form-label" for="">
+                                            <span class="text-danger">*</span>
+                                            Driver Name:
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input class="form-control form-control-sm" id="" placeholder="Driver Name" type="text" readonly
+                                                value="{{ DriverFacialResponse?.Name || '' }}">
+                            
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center text-end">
+                                        <label class="col-sm-5 col-form-label" for="">Driver Father Name:</label>
+                                        <div class="col-sm-7">
+                                            <input class="form-control form-control-sm" id="" placeholder="Driver Father Name" type="text" readonly
+                                                value="{{ DriverFacialResponse?.FatherName || '' }}">
+                                        </div>
+                                    </div>
+                            
+                                    <div class="row align-items-center text-end">
+                                        <label class="col-sm-5 col-form-label" for="">Driver Cnic:</label>
+                                        <div class="col-sm-7">
+                                            <input class="form-control form-control-sm" id="" placeholder="Cnic" type="text" readonly
+                                                value="{{ DriverFacialResponse?.Cnic || '' }}">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center text-end">
+                                        <label class="col-sm-5 col-form-label" for="">Driver Address:</label>
+                                        <div class="col-sm-7">
+                                            <input class="form-control form-control-sm" id="" placeholder="Address" type="text" readonly
+                                                value="{{ DriverFacialResponse?.Address || '' }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <img [src]="'data:image/jpeg;base64,' + ImagePath" alt="" id="selected-cropped-image" class="img-fluid violation-img center-image" style="height: 172px;">
+                                    <!-- <img src="../../assets/img/violationimggg.jpg" alt="" id="selected-image" class="img-fluid"> -->
+                                </div>
+                            </div>
+                          <!-- <div class="row align-items-center text-end">
+                              <label class="col-sm-5 col-form-label" for="">Body Color:</label>
+                              <div class="col-sm-7">
+                                  <input class="form-control form-control-sm" id="" placeholder="RED/BLACK" type="text" readonly value="{{ VehicleExciseResponse?.COL_NAME || '' }}">
+                              </div>
+                          </div>
+                         
+                          <div class="row align-items-center text-end">
+                              <label class="col-sm-5 col-form-label" for="">Owner:</label>
+                              <div class="col-sm-7">
+                                  <input class="form-control form-control-sm" id="" placeholder="Owner Name" type="text" readonly value="{{ VehicleExciseResponse?.OWNERNAME || '' }}">
+                              </div>
+                          </div>
+                          <div class="row align-items-center text-end">
+                              <label class="col-sm-5 col-form-label" for="">Address:</label>
+                              <div class="col-sm-7">
+                                  <input class="form-control form-control-sm" id="" placeholder="Owner Address" type="text" readonly value="{{ VehicleExciseResponse?.OWNERPERMANENTADDRESS || '' }}">
+                              </div>
+                          </div>
+                          <div class="row align-items-center text-end">
+                              <label class="col-sm-5 col-form-label" for="">Vehicle Status:</label>
+                              <div class="col-sm-7">
+                                  <input class="form-control form-control-sm" id="" placeholder="REGISTERED/NOT REGISTERED" type="text" readonly value="{{ VehicleExciseResponse?.STATUS || '' }}">
+                              </div>
+                          </div> -->
+                          
+                          <!-- Violation Information -->
+                          <div class="row">
+                              <div class="col-12 bg-light">
+                                  <span class="text-primary py-2 fw-bold">Violation Information</span>
+                              </div>
+                          </div>
+                          <div class="row align-items-center text-end">
+                              <label class="col-sm-5 col-form-label" for="">
+                                  <span class="text-danger">*</span>
+                                  Violation:
+                              </label>
+                              <div class="col-sm-4">
+                                  <input class="form-control form-control-sm" id="" type="text" readonly value="No Helmet Offense">
+
+                              </div>
+                              <div class="col-sm-3">
+                                  <input class="form-control form-control-sm" id="" type="text" readonly value="2000">
+
+                              </div>
+                          </div>
+                          <div class="row align-items-center text-end">
+                              <label class="col-sm-5 col-form-label" for="">
+                                  <span class="text-danger">*</span>
+                                  Violation Time:
+                              </label>
+                              <div class="col-sm-7">
+                                  <input class="form-control form-control-sm" id="" type="text" readonly
+                                  value="{{ VehicleChallanData[currentIndex].passingDateTime | date: 'yyyy-MM-dd h:mm:ss a' }}">
+                              </div>
+                          </div>
+                          <div class="row align-items-center text-end">
+                              <label class="col-sm-5 col-form-label" for="">
+                                  <span class="text-danger">*</span>
+                                  Location:
+                              </label>
+                              <div class="col-sm-7">
+                                  <input class="form-control form-control-sm" id="" type="text" readonly
+                                      value={{VehicleChallanData[currentIndex].placeOfViolation}}>
+                              </div>
+                          </div>
+                          <div class="row align-items-center text-end">
+                              <label class="col-sm-5 col-form-label" for="">Direction:</label>
+                              <div class="col-sm-7">
+                                  <input class="form-control form-control-sm" id="" type="text" readonly
+                                  value={{VehicleChallanData[currentIndex].drivingDirection}}>
+                              </div>
+                          </div>
+                          <div class="row align-items-center text-end">
+                              <label class="col-sm-3 col-form-label" for="">Lane#:</label>
+                              <div class="col-sm-3">
+                                  <input class="form-control form-control-sm" id="" type="text" readonly value="2">
+                              </div>
+                              <label class="col-sm-3 col-form-label" for="">Over Speed:</label>
+                              <div class="col-sm-3">
+                                  <input class="form-control form-control-sm" id="" type="text" readonly value="0">
+                              </div>
+                          </div>
+                          <div class="row align-items-center text-end">
+                              <label class="col-sm-3 col-form-label" for="">Speed:</label>
+                              <div class="col-sm-3">
+                                  <input class="form-control form-control-sm" id="" type="text" readonly value="74 Km/h">
+                              </div>
+                              <label class="col-sm-3 col-form-label" for="">Speed Limit:</label>
+                              <div class="col-sm-3">
+                                  <input class="form-control form-control-sm" id="" type="text" readonly value="60 Km/h">
+                              </div>
+                          </div>
+                          <div class="row align-items-center text-end mt-3">
+                              <!-- <div class="col-6">
+                                  <button [disabled]="this.currentIndex <= 0" class="btn btn-sm btn-control btn-danger text-white me-2" (click)="onPreviousClick()">Previous</button>
+                                  
+                                  <button [disabled]="this.currentIndex==this.VehicleChallanData.length-1" class="btn btn-sm btn-control btn-danger text-white" (click)="onNextClick()">Next</button>
+                              </div> -->
+                              <div class="col-6">
+                                  <button class="btn btn-sm btn-control text-white btn-info" (click)="Valid()">Valid</button>
+                                  <!-- <button class="btn btn-sm btn-control text-white btn-info me-2" (click)="InValid()">Invalid</button>
+                                  <button class="btn btn-sm btn-control text-white btn-info me-2"(click)="Clone()">Clone</button> -->
+                              
+                              </div>
+                              <!-- <div class="col-6">
+                                  Showing {{startIndex}} of {{this.TotalSize}} entries
+                              </div> -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="card-footer">
+                  <div class="row row-cols-1 row-cols-md-5 text-center">
+  
+                  </div>
+              </div>
+          </div>
+  
+      </div>
+  </div>
+
+</div>
+

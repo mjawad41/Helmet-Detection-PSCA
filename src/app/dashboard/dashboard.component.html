@@ -1,0 +1,30 @@
+
+<div class="container-lg">
+  
+
+ 
+  <!-- <app-verify></app-verify> -->
+
+  <label for="startDate">Start Date:</label>
+  <input type="datetime-local" id="startDate" name="startDate" [(ngModel)]="startDate"  max="{{ endDate }}">
+
+  <label for="endDate">End Date:</label>
+  <input type="datetime-local" id="endDate" name="endDate" [(ngModel)]="endDate" >
+
+  <label for="shift">Shift:</label>
+  <select id="shift" name="shift" [(ngModel)]="selectedShift" (ngModelChange)="updateDatesForShift()">
+    <option *ngFor="let shift of shifts" [value]="shift">{{ shift }}</option>
+  </select>
+
+
+  <button (click)="onUpdateDateClick()">Search</button>
+
+
+  <app-omc #childOmcComponent [dateFrom]="startDate" [dateTo]="endDate"></app-omc>
+  <app-etc #childetcComponent [dateFrom]="startDate" [dateTo]="endDate"></app-etc>
+  <app-pucar #childpucarComponent [dateFrom]="startDate" [dateTo]="endDate"></app-pucar>
+  <app-hrmis #childhrmisComponent [dateFrom]="startDate" [dateTo]="endDate"></app-hrmis>
+  <!-- <app-asm></app-asm> -->
+  <app-edac #childedcComponent [dateFrom]="startDate" [dateTo]="endDate"></app-edac>
+  <!-- <app-vms></app-vms> -->
+</div>

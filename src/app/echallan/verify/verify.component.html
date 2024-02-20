@@ -1,0 +1,37 @@
+ 
+
+<div class="card mb-4">
+    
+    <h2 class="card-header bg-white text-center">Echallan Verification System</h2>
+    <div class="card-body">
+    </div>
+
+    <div>
+        <input type="text" placeholder="Plate Number" [(ngModel)]="plateNumber" />
+        <button (click)="getVehicleDetails(plateNumber)">Search</button>
+    </div>
+
+    <div *ngIf="vehicleDetails">
+        <h1>Vehicle Information</h1>
+        <ul>
+            <li><strong>Owner Address:</strong> {{ vehicleDetails.OWNERADDRESS }}</li>
+            <li><strong>Owner Father's Name:</strong> {{ vehicleDetails.OWNERFATHERNAME }}</li>
+            <li><strong>Owner Name:</strong> {{ vehicleDetails.OWNERNAME }}</li>
+            <li><strong>Owner Permanent Address:</strong> {{ vehicleDetails.OWNERPERMANENTADDRESS }}</li>
+            <li><strong>Owner Phone 1:</strong> {{ vehicleDetails.OWNERPHONE1 }}</li>
+            <li><strong>Owner Phone 2:</strong> {{ vehicleDetails.OWNERPHONE2 || 'Not available' }}</li>
+            <li><strong>Body Type:</strong> {{ vehicleDetails.BODYTYPE }}</li>
+            <li><strong>Category Name:</strong> {{ vehicleDetails.CAT_NAME }}</li>
+            <li><strong>Color Name:</strong> {{ vehicleDetails.COL_NAME }}</li>
+            <li><strong>Make:</strong> {{ vehicleDetails.MAKE }}</li>
+            <li><strong>Maker:</strong> {{ vehicleDetails.MAKER }}</li>
+            <li><strong>Status:</strong> {{ vehicleDetails.STATUS }}</li>
+            <li><strong>Tax Paid Up To:</strong> {{ vehicleDetails.TAXPAIDUPTO }}</li>
+        </ul>
+    </div>
+
+    <div class="card-footer">
+        <div class="row row-cols-1 row-cols-md-5 text-center">
+        </div>
+    </div>
+</div>

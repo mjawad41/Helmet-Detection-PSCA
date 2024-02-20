@@ -1,0 +1,7 @@
+{
+    "/api/GetVehicleDataByPlateNo?PlateNo=ABU-039": {
+      "target": "http://10.20.101.220:880",
+      "secure": false
+    }
+  }
+  

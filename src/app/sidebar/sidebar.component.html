@@ -1,0 +1,36 @@
+<div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+  <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/dashboard']">
+        <svg class="nav-icon">
+          <use xlink:href="assets/vendors/coreui/icons/svg/free.svg#cil-chart-line"></use>
+        </svg> Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
+    <li class="nav-title">Systems</li>
+   
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/violation-verification']">
+        <svg class="nav-icon">
+          <use xlink:href="assets/vendors/coreui/icons/svg/free.svg#cil-camera-control"></use>
+        </svg>Violation Verification</a>
+    </li>
+
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/face-verification']">
+      <svg class="nav-icon">
+        <use xlink:href="assets/vendors/coreui/icons/svg/free.svg#cil-camera-control"></use>
+      </svg>Facial Verification</a>
+  </li>
+
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/vehicle-passing']">
+      <svg class="nav-icon">
+        <use xlink:href="assets/vendors/coreui/icons/svg/free.svg#cil-camera-control"></use>
+      </svg>Vehicle Passing</a>
+    </li>
+
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/devices']">
+      <svg class="nav-icon">
+        <use xlink:href="assets/vendors/coreui/icons/svg/free.svg#cil-camera-control"></use>
+      </svg>Device List</a>
+    </li>
+        
+  </ul>
+  <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+</div>
